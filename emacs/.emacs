@@ -201,6 +201,9 @@
 ;; (add-hook 'python-mode-hook 'jedi:setup)
 ;; (setq jedi:complete-on-dot t)
 
+;; nix
+(el-get 'sync 'nix-mode)
+
 ;; Language server
 (el-get 'sync 'lsp-mode)
 (add-hook 'python-mode-hook #'lsp)
@@ -317,13 +320,14 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(c-basic-offset 4)
- '(tab-width 4)
  '(exec-path
-   (quote
-    ("/home/apache8080/.cargo/bin" "/home/apache8080/.yarn/bin" "/home/apache8080/perl5/bin" "/home/apache8080/.cabal/bin" "/home/apache8080/.local/venv/bin" "/home/apache8080/.local/scripts" "/home/apache8080/.local/bin" "/usr/local/bin" "/usr/bin" "/bin" "/usr/games" "/usr/lib/emacs/26.1/x86_64-linux-gnu")))
+   '("/home/apache8080/.cargo/bin" "/home/apache8080/.yarn/bin" "/home/apache8080/perl5/bin" "/home/apache8080/.cabal/bin" "/home/apache8080/.local/venv/bin" "/home/apache8080/.local/scripts" "/home/apache8080/.local/bin" "/usr/local/bin" "/usr/bin" "/bin" "/usr/games" "/usr/lib/emacs/26.1/x86_64-linux-gnu"))
  '(lsp-prefer-flymake nil)
  '(lsp-pyls-plugins-pycodestyle-enabled nil)
- '(org-agenda-files (quote ("~/box/self/someday.org"))))
+ '(org-agenda-files '("~/box/self/someday.org"))
+ '(package-selected-packages
+   '(fzf lsp-mode web-beautify rust-mode haskell-mode color-theme-sanityinc-tomorrow auto-complete))
+ '(tab-width 4))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -332,11 +336,4 @@
  ;; If there is more than one, they won't work right.
  )
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-	(fzf lsp-mode web-beautify rust-mode haskell-mode color-theme-sanityinc-tomorrow auto-complete))))
+
