@@ -6,6 +6,10 @@
 
 ;; Based off of Sam Grayson's .emacs config
 
+
+;; Move meta to windows key for i3
+(setq x-super-keysym 'meta)
+
 ;; el-get stuff
 (add-to-list 'load-path "~/.emacs.d/el-get/el-get")
 
