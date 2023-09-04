@@ -59,6 +59,11 @@
 ;; don't yell at me
 ;;(setq warning-minimum-level :emergency)
 
+;; ido
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
+
 ;; sit on trees
 (setq treesit-language-source-alist
    '((bash "https://github.com/tree-sitter/tree-sitter-bash")
