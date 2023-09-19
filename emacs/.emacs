@@ -1,4 +1,4 @@
-;; Remove backup files
+; Remove backup files
 (setq make-backup-files nil)
 
 ;; Disable bars
@@ -85,6 +85,7 @@
 ;; envrc
 (envrc-global-mode 1)
 
+
 ;; sit on trees
 (setq treesit-language-source-alist
    '((bash "https://github.com/tree-sitter/tree-sitter-bash")
@@ -96,3 +97,6 @@
      (rust "https://github.com/tree-sitter/tree-sitter-rust")
      (yaml "https://github.com/ikatyang/tree-sitter-yaml")))
 
+
+;; fonts
+(set-face-attribute 'default nil :family "mononoki" :height 110)
