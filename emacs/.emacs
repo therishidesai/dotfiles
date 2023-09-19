@@ -14,6 +14,10 @@
 ;;(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
 
+;; native comp packages
+(setq package-native-compile t)
+
+
 ;; heaven and hell
 (require 'color-theme-sanityinc-tomorrow)
 (require 'heaven-and-hell)
@@ -47,7 +51,7 @@
    '("06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" default))
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(haskell-mode heaven-and-hell color-theme-sanityinc-tomorrow rust-mode nix-mode)))
+   '(envrc corfu vterm eglot haskell-mode heaven-and-hell color-theme-sanityinc-tomorrow rust-mode nix-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -55,17 +59,31 @@
  ;; If there is more than one, they won't work right.
  )
 
+;; eglot
+(add-hook 'rust-mode-hook 'eglot-ensure)
+(add-hook 'nix-mode-hook 'eglot-ensure)
+(add-hook 'haskell-mode-hook 'eglot-ensure)
+
 ;; because of eelco
 (use-package nix-mode
   :mode "\\.nix\\'")
 
 ;; don't yell at me
-;;(setq warning-minimum-level :emergency)
+(setq warning-minimum-level :emergency)
 
 ;; ido
-(setq ido-enable-flex-matching t)
-(setq ido-everywhere t)
-(ido-mode 1)
+;; (setq ido-enable-flex-matching t)
+;; (setq ido-everywhere t)
+;; (ido-mode 1)
+
+;; fido
+(fido-mode 1)
+
+;; corfu
+(global-corfu-mode 1)
+
+;; envrc
+(envrc-global-mode 1)
 
 ;; sit on trees
 (setq treesit-language-source-alist
