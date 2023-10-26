@@ -1,6 +1,10 @@
 ; Remove backup files
 (setq make-backup-files nil)
 
+;; no tabs
+(setq-default indent-tabs-mode nil)
+
+
 ;; Disable bars
 (toggle-scroll-bar -1) 
 (tool-bar-mode -1)
@@ -51,7 +55,7 @@
    '("06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" default))
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   '(envrc corfu vterm eglot haskell-mode heaven-and-hell color-theme-sanityinc-tomorrow rust-mode nix-mode)))
+   '(yaml-mode multi-vterm envrc corfu vterm eglot haskell-mode heaven-and-hell color-theme-sanityinc-tomorrow rust-mode nix-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -63,6 +67,9 @@
 (add-hook 'rust-mode-hook 'eglot-ensure)
 (add-hook 'nix-mode-hook 'eglot-ensure)
 (add-hook 'haskell-mode-hook 'eglot-ensure)
+
+;; multiple terminals
+(use-package multi-vterm :ensure t)
 
 ;; because of eelco
 (use-package nix-mode
